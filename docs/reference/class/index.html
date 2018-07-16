@@ -1,0 +1,845 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Classes · TwitchJS</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Overview"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Classes · TwitchJS"/><meta property="og:type" content="website"/><meta property="og:url" content="https://twitch-apis.github.io/twitch-js/index.html"/><meta property="og:description" content="## Overview"/><meta property="og:image" content="https://twitch-apis.github.io/twitch-js/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://twitch-apis.github.io/twitch-js/img/docusaurus.png"/><link rel="shortcut icon" href="/twitch-js/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://embed.runkit.com"></script><script type="text/javascript" src="js/runkit.js"></script><link rel="stylesheet" href="/twitch-js/css/prism.css"/><link rel="stylesheet" href="/twitch-js/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/twitch-js/"><img class="logo" src="/twitch-js/img/glitch-white.svg" alt="TwitchJS"/><h2 class="headerTitleWithLogo">TwitchJS</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/twitch-js/docs/getting-started" target="_self">Docs</a></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/twitch-apis/twitch-js/tree/next" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Reference</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul><li class="navListItem"><a class="navItem" href="/twitch-js/docs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/authentication">Authentication</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/messaging">Messaging</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/api">API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Examples</h3><ul><li class="navListItem"><a class="navItem" href="/twitch-js/docs/examples-node">Node</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/examples-browser">Browser</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Reference</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/twitch-js/docs/reference/class">Classes</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/reference/function">Functions</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/reference/constant">Constants</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/reference/enum">Enums</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/reference/mixin">Mixins</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/reference/typedef">Type Definitions</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/reference/external">External</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Classes</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
+<dl>
+<dt><a href="#Api">Api</a></dt>
+  <dd><p>API client</p>
+</dd>
+  <dt><a href="#Chat">Chat</a> ⇐ <code>external:EventEmitter3</code></dt>
+  <dd><p>Chat client</p>
+</dd>
+  <dt><a href="#TwitchJs">TwitchJs</a></dt>
+  <dd><p>TwitchJs client</p>
+</dd>
+  </dl>
+<p><a name="Api"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="api"></a><a href="#api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Api</h2>
+<p>API client</p>
+<p><strong>Kind</strong>: global class</p>
+<ul>
+<li><a href="#Api">Api</a>
+<ul>
+<li><a href="#new_Api_new">new Api(options)</a></li>
+<li><a href="#Api+readyState">.readyState</a> : <code>number</code></li>
+<li><a href="#Api+status">.status</a> : <code>ApiStatusState</code></li>
+<li><a href="#Api+initialize">.initialize()</a> ⇒ <code>Promise.&lt;ApiStatusState, Object&gt;</code></li>
+<li><a href="#Api+hasScope">.hasScope(scope)</a> ⇒ <code>Promise.&lt;boolean, boolean&gt;</code></li>
+<li><a href="#Api+get">.get(endpoint, [options])</a></li>
+<li><a href="#Api+post">.post(endpoint, [options])</a></li>
+<li><a href="#Api+put">.put(endpoint, [options])</a></li>
+</ul></li>
+</ul>
+<hr>
+<p><a name="new_Api_new"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="new-apioptions"></a><a href="#new-apioptions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>new Api(options)</h3>
+<p>API constructor.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>options</td><td><code>ApiOptions</code></td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong> <em>(Get Featured Streams)</em></p>
+<pre><code class="hljs css languages- js"><span class="token keyword">const</span> token <span class="token operator">=</span> <span class="token string">'cfabdegwdoklmawdzdo98xt2fo512y'</span>
+<span class="token keyword">const</span> username <span class="token operator">=</span> <span class="token string">'ronni'</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> api <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TwitchJs</span><span class="token punctuation">(</span><span class="token punctuation">{</span> token<span class="token punctuation">,</span> username <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+api<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'streams/featured'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// Do stuff ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<p><a name="Api+readyState"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="apireadystate-code-number-code"></a><a href="#apireadystate-code-number-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>api.readyState : <code>number</code></h3>
+<p>API client ready state : <strong>1</strong> ready; <strong>2</strong> initialized.</p>
+<p><strong>Kind</strong>: instance property of <a href="#Api"><code>Api</code></a></p>
+<hr>
+<p><a name="Api+status"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="apistatus-code-apistatusstate-code"></a><a href="#apistatus-code-apistatusstate-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>api.status : <code>ApiStatusState</code></h3>
+<p>API status.</p>
+<p><strong>Kind</strong>: instance property of <a href="#Api"><code>Api</code></a></p>
+<hr>
+<p><a name="Api+initialize"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="apiinitialize-code-promise-lt-apistatusstate-object-gt-code"></a><a href="#apiinitialize-code-promise-lt-apistatusstate-object-gt-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>api.initialize() ⇒ <code>Promise.&lt;ApiStatusState, Object&gt;</code></h3>
+<p>Initialize API client and retrieve status.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Api"><code>Api</code></a>  <br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/v5/#root-url">https://dev.twitch.tv/docs/v5/#root-url</a></p>
+<hr>
+<p><a name="Api+hasScope"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="apihasscopescope-code-promise-lt-boolean-boolean-gt-code"></a><a href="#apihasscopescope-code-promise-lt-boolean-boolean-gt-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>api.hasScope(scope) ⇒ <code>Promise.&lt;boolean, boolean&gt;</code></h3>
+<p>Check if current credentials include <code>scope</code>.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Api"><code>Api</code></a>  <br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/authentication/#twitch-api-v5">https://dev.twitch.tv/docs/authentication/#twitch-api-v5</a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>scope</td><td><code>string</code></td><td><p>Scope to check.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Api+get"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="apigetendpoint-options"></a><a href="#apigetendpoint-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>api.get(endpoint, [options])</h3>
+<p>GET endpoint.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Api"><code>Api</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>endpoint</td><td><code>string</code></td>
+    </tr><tr>
+    <td>[options]</td><td><code>FetchOptions</code></td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong> <em>(Get Live Overwatch Streams)</em></p>
+<pre><code class="hljs css languages- js">api<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'streams'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> search<span class="token punctuation">:</span> <span class="token punctuation">{</span> game<span class="token punctuation">:</span> <span class="token string">'Overwatch'</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token comment">// Do stuff with response ...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<p><a name="Api+post"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="apipostendpoint-options"></a><a href="#apipostendpoint-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>api.post(endpoint, [options])</h3>
+<p>POST endpoint.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Api"><code>Api</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>endpoint</td><td><code>string</code></td><td></td>
+    </tr><tr>
+    <td>[options]</td><td><code>FetchOptions</code></td><td><code>{method:&#x27;post&#x27;}</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Api+put"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="apiputendpoint-options"></a><a href="#apiputendpoint-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>api.put(endpoint, [options])</h3>
+<p>PUT endpoint.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Api"><code>Api</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>endpoint</td><td><code>string</code></td><td></td>
+    </tr><tr>
+    <td>[options]</td><td><code>FetchOptions</code></td><td><code>{method:&#x27;put&#x27;}</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="chat-code-external-eventemitter3-code"></a><a href="#chat-code-external-eventemitter3-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Chat ⇐ <code>external:EventEmitter3</code></h2>
+<p>Chat client</p>
+<p><strong>Kind</strong>: global class<br>
+<strong>Extends</strong>: <code>external:EventEmitter3</code>  <br>
+<strong>Emits</strong>: <a href="#Chat+event_*"><code>*</code></a>, <a href="#Chat+event_CLEARCHAT"><code>CLEARCHAT</code></a>, <a href="#Chat+event_CLEARCHAT/USER_BANNED"><code>CLEARCHAT/USER_BANNED</code></a>, <a href="#Chat+event_GLOBALUSERSTATE"><code>GLOBALUSERSTATE</code></a>, <a href="#Chat+event_HOSTTARGET"><code>HOSTTARGET</code></a>, <a href="#Chat+event_JOIN"><code>JOIN</code></a>, <a href="#Chat+event_MODE"><code>MODE</code></a>, <a href="#Chat+event_NAMES"><code>NAMES</code></a>, <a href="#Chat+event_NAMES_END"><code>NAMES_END</code></a>, <a href="#Chat+event_NOTICE"><code>NOTICE</code></a>, <a href="#Chat+event_NOTICE/ROOM_MODS"><code>NOTICE/ROOM_MODS</code></a>, <a href="#Chat+event_PART"><code>PART</code></a>, <a href="#Chat+event_PRIVMSG"><code>PRIVMSG</code></a>, <a href="#Chat+event_ROOMSTATE"><code>ROOMSTATE</code></a>, <a href="#Chat+event_USERNOTICE/RAID"><code>USERNOTICE/RAID</code></a>, <a href="#Chat+event_USERNOTICE/RESUBSCRIPTION"><code>USERNOTICE/RESUBSCRIPTION</code></a>, <a href="#Chat+event_USERNOTICE/RITUAL"><code>USERNOTICE/RITUAL</code></a>, <a href="#Chat+event_USERNOTICE/SUBSCRIPTION"><code>USERNOTICE/SUBSCRIPTION</code></a>, <a href="#Chat+event_USERNOTICE/SUBSCRIPTION_GIFT"><code>USERNOTICE/SUBSCRIPTION_GIFT</code></a>, <a href="#Chat+event_USERSTATE"><code>USERSTATE</code></a></p>
+<ul>
+<li><a href="#Chat">Chat</a> ⇐ <code>external:EventEmitter3</code>
+<ul>
+<li><a href="#new_Chat_new">new Chat(options)</a></li>
+<li><a href="#Chat+userState">.userState</a> : <code>GlobalUserStateTags</code></li>
+<li><a href="#Chat+channels">.channels</a> : <code>Object.&lt;string, ChannelState&gt;</code></li>
+<li><a href="#Chat+options">.options</a> : <code>ChatOptions</code></li>
+<li><a href="#Chat+readyState">.readyState</a> : <code>enum</code></li>
+<li><a href="#Chat+connect">.connect()</a> ⇒ <code>Promise.&lt;GlobalUserStateMessage, string&gt;</code></li>
+<li><a href="#Chat+send">.send(message)</a></li>
+<li><a href="#Chat+disconnect">.disconnect()</a></li>
+<li><a href="#Chat+join">.join(channel)</a> ⇒ <code>Promise.&lt;ChannelState, string&gt;</code></li>
+<li><a href="#Chat+part">.part(channel)</a></li>
+<li><a href="#Chat+say">.say(channel, message)</a> ⇒ <code>Promise.&lt;UserStateMessage, string&gt;</code></li>
+<li><a href="#Chat+broadcast">.broadcast(message)</a> ⇒ <code>Promise.&lt;Array.&lt;UserStateMessage&gt;&gt;</code></li>
+<li><a href="#Chat+event_*">&quot;*&quot;</a></li>
+<li><a href="#Chat+event_JOIN">&quot;JOIN&quot;</a></li>
+<li><a href="#Chat+event_PART">&quot;PART&quot;</a></li>
+<li><a href="#Chat+event_MODE">&quot;MODE&quot;</a></li>
+<li><a href="#Chat+event_NAMES">&quot;NAMES&quot;</a></li>
+<li><a href="#Chat+event_NAMES_END">&quot;NAMES_END&quot;</a></li>
+<li><a href="#Chat+event_GLOBALUSERSTATE">&quot;GLOBALUSERSTATE&quot;</a></li>
+<li><a href="#Chat+event_CLEARCHAT/USER_BANNED">&quot;CLEARCHAT/USER_BANNED&quot;</a></li>
+<li><a href="#Chat+event_CLEARCHAT">&quot;CLEARCHAT&quot;</a></li>
+<li><a href="#Chat+event_HOSTTARGET">&quot;HOSTTARGET&quot;</a></li>
+<li><a href="#Chat+event_ROOMSTATE">&quot;ROOMSTATE&quot;</a></li>
+<li><a href="#Chat+event_NOTICE/ROOM_MODS">&quot;NOTICE/ROOM_MODS&quot;</a></li>
+<li><a href="#Chat+event_NOTICE">&quot;NOTICE&quot;</a></li>
+<li><a href="#Chat+event_USERSTATE">&quot;USERSTATE&quot;</a></li>
+<li><a href="#Chat+event_PRIVMSG">&quot;PRIVMSG&quot;</a></li>
+<li><a href="#Chat+event_USERNOTICE/SUBSCRIPTION">&quot;USERNOTICE/SUBSCRIPTION&quot;</a></li>
+<li><a href="#Chat+event_USERNOTICE/RESUBSCRIPTION">&quot;USERNOTICE/RESUBSCRIPTION&quot;</a></li>
+<li><a href="#Chat+event_USERNOTICE/SUBSCRIPTION_GIFT">&quot;USERNOTICE/SUBSCRIPTION_GIFT&quot;</a></li>
+<li><a href="#Chat+event_USERNOTICE/RAID">&quot;USERNOTICE/RAID&quot;</a></li>
+<li><a href="#Chat+event_USERNOTICE/RITUAL">&quot;USERNOTICE/RITUAL&quot;</a></li>
+</ul></li>
+</ul>
+<hr>
+<p><a name="new_Chat_new"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="new-chatoptions"></a><a href="#new-chatoptions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>new Chat(options)</h3>
+<p>Chat constructor.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>options</td><td><code>ChatOptions</code></td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong> <em>(Connecting to Twitch and joining #dallas)</em></p>
+<pre><code class="hljs css languages- js"><span class="token keyword">const</span> token <span class="token operator">=</span> <span class="token string">'cfabdegwdoklmawdzdo98xt2fo512y'</span>
+<span class="token keyword">const</span> username <span class="token operator">=</span> <span class="token string">'ronni'</span>
+<span class="token keyword">const</span> channel <span class="token operator">=</span> <span class="token string">'#dallas'</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> chat <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TwitchJs</span><span class="token punctuation">(</span><span class="token punctuation">{</span> token<span class="token punctuation">,</span> username <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+chat<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>globalUserState <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// Listen to all messages</span>
+  chat<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'*'</span><span class="token punctuation">,</span> message <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token comment">// Do stuff with message ...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// Listen to PRIVMSG</span>
+  chat<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'PRIVMSG'</span><span class="token punctuation">,</span> privateMessage <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token comment">// Do stuff with privateMessage ...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// Do other stuff ...</span>
+
+  chat<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>channel<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>channelState <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token comment">// Do stuff with channelState...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<p><a name="Chat+userState"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="chatuserstate-code-globaluserstatetags-code"></a><a href="#chatuserstate-code-globaluserstatetags-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chat.userState : <code>GlobalUserStateTags</code></h3>
+<p><strong>Kind</strong>: instance property of <a href="#Chat"><code>Chat</code></a></p>
+<hr>
+<p><a name="Chat+channels"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="chatchannels-code-object-lt-string-channelstate-gt-code"></a><a href="#chatchannels-code-object-lt-string-channelstate-gt-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chat.channels : <code>Object.&lt;string, ChannelState&gt;</code></h3>
+<p><strong>Kind</strong>: instance property of <a href="#Chat"><code>Chat</code></a></p>
+<hr>
+<p><a name="Chat+options"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="chatoptions-code-chatoptions-code"></a><a href="#chatoptions-code-chatoptions-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chat.options : <code>ChatOptions</code></h3>
+<p>Validated options.</p>
+<p><strong>Kind</strong>: instance property of <a href="#Chat"><code>Chat</code></a></p>
+<hr>
+<p><a name="Chat+readyState"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="chatreadystate-code-enum-code"></a><a href="#chatreadystate-code-enum-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chat.readyState : <code>enum</code></h3>
+<p>Chat client ready state.</p>
+<p><strong>Kind</strong>: instance enum of <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>0</td><td><code>number</code></td><td><p>not ready</p>
+</td>
+    </tr><tr>
+    <td>1</td><td><code>number</code></td><td><p>connecting</p>
+</td>
+    </tr><tr>
+    <td>2</td><td><code>number</code></td><td><p>connected</p>
+</td>
+    </tr><tr>
+    <td>3</td><td><code>number</code></td><td><p>disconnecting</p>
+</td>
+    </tr><tr>
+    <td>4</td><td><code>number</code></td><td><p>disconnected</p>
+</td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+connect"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="chatconnect-code-promise-lt-globaluserstatemessage-string-gt-code"></a><a href="#chatconnect-code-promise-lt-globaluserstatemessage-string-gt-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chat.connect() ⇒ <code>Promise.&lt;GlobalUserStateMessage, string&gt;</code></h3>
+<p>Connect to Twitch.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Returns</strong>: <code>Promise.&lt;GlobalUserStateMessage, string&gt;</code> - Global user state message</p>
+<hr>
+<p><a name="Chat+send"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="chatsendmessage"></a><a href="#chatsendmessage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chat.send(message)</h3>
+<p>Sends a raw message to Twitch.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Chat"><code>Chat</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>message</td><td><code>string</code></td><td><p>Message to send.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+disconnect"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="chatdisconnect"></a><a href="#chatdisconnect" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chat.disconnect()</h3>
+<p>Disconnect from Twitch.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Chat"><code>Chat</code></a></p>
+<hr>
+<p><a name="Chat+join"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="chatjoinchannel-code-promise-lt-channelstate-string-gt-code"></a><a href="#chatjoinchannel-code-promise-lt-channelstate-string-gt-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chat.join(channel) ⇒ <code>Promise.&lt;ChannelState, string&gt;</code></h3>
+<p>Join a channel.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Chat"><code>Chat</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>channel</td><td><code>string</code></td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong> <em>(Joining #dallas)</em></p>
+<pre><code class="hljs css languages- js"><span class="token keyword">const</span> channel <span class="token operator">=</span> <span class="token string">'#dallas'</span>
+
+chat<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>channel<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>channelState <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// Do stuff with channelState...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>Example</strong> <em>(Joining multiple channels)</em></p>
+<pre><code class="hljs css languages- js"><span class="token keyword">const</span> channels <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'#dallas'</span><span class="token punctuation">,</span> <span class="token string">'#ronni'</span><span class="token punctuation">]</span>
+
+Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>channels<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>channel <span class="token operator">=></span> chat<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>channel<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>channelStates <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token comment">// Listen to all PRIVMSG</span>
+    chat<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'PRIVMSG'</span><span class="token punctuation">,</span> privateMessage <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token comment">// Do stuff with privateMessage ...</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// Listen to PRIVMSG from #dallas ONLY</span>
+    chat<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'PRIVMSG/#dallas'</span><span class="token punctuation">,</span> privateMessage <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token comment">// Do stuff with privateMessage ...</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// Listen to all PRIVMSG from #ronni ONLY</span>
+    chat<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'PRIVMSG/#ronni'</span><span class="token punctuation">,</span> privateMessage <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token comment">// Do stuff with privateMessage ...</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<p><a name="Chat+part"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="chatpartchannel"></a><a href="#chatpartchannel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chat.part(channel)</h3>
+<p>Depart from a channel.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Chat"><code>Chat</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>channel</td><td><code>string</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+say"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="chatsaychannel-message-code-promise-lt-userstatemessage-string-gt-code"></a><a href="#chatsaychannel-message-code-promise-lt-userstatemessage-string-gt-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chat.say(channel, message) ⇒ <code>Promise.&lt;UserStateMessage, string&gt;</code></h3>
+<p>Send a message to a channel.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Chat"><code>Chat</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>channel</td><td><code>string</code></td>
+    </tr><tr>
+    <td>message</td><td><code>string</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+broadcast"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="chatbroadcastmessage-code-promise-lt-array-lt-userstatemessage-gt-gt-code"></a><a href="#chatbroadcastmessage-code-promise-lt-array-lt-userstatemessage-gt-gt-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chat.broadcast(message) ⇒ <code>Promise.&lt;Array.&lt;UserStateMessage&gt;&gt;</code></h3>
+<p>Broadcast message to all connected channels.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Chat"><code>Chat</code></a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>message</td><td><code>string</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_*"></a></p>
+<h3><a class="anchor" aria-hidden="true" id=""></a><a href="#" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;*&quot;</h3>
+<p>All events are also emitted with this event name.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a></p>
+<hr>
+<p><a name="Chat+event_JOIN"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="join"></a><a href="#join" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;JOIN&quot;</h3>
+<p>Join a channel.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>BaseMessage</code>  <br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/membership/#join-twitch-membership">https://dev.twitch.tv/docs/irc/membership/#join-twitch-membership</a><br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>username</td><td><code>string</code></td><td><p>Username (lower-case)</p>
+</td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_PART"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="part"></a><a href="#part" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;PART&quot;</h3>
+<p>Depart from a channel.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>BaseMessage</code>  <br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/membership/#part-twitch-membership">https://dev.twitch.tv/docs/irc/membership/#part-twitch-membership</a><br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>username</td><td><code>string</code></td><td><p>Username (lower-case)</p>
+</td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_MODE"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="mode"></a><a href="#mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;MODE&quot;</h3>
+<p>Gain/lose moderator (operator) status in a channel.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>BaseMessage</code>  <br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/membership/#mode-twitch-membership">https://dev.twitch.tv/docs/irc/membership/#mode-twitch-membership</a><br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>event</td><td><code>string</code></td>
+    </tr><tr>
+    <td>username</td><td><code>string</code></td>
+    </tr><tr>
+    <td>isModerator</td><td><code>boolean</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_NAMES"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="names"></a><a href="#names" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;NAMES&quot;</h3>
+<p>List current chatters in a channel.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>BaseMessage</code>  <br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/membership/#names-twitch-membership">https://dev.twitch.tv/docs/irc/membership/#names-twitch-membership</a><br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>usernames</td><td><code>Array.&lt;string&gt;</code></td><td><p>Array of usernames present in channel</p>
+</td>
+    </tr><tr>
+    <td>listType</td><td><code>&#x27;mods&#x27;</code> | <code>&#x27;chatters&#x27;</code></td><td></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_NAMES_END"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="names-end"></a><a href="#names-end" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;NAMES_END&quot;</h3>
+<p>End of list current chatters in a channel.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>BaseMessage</code>  <br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/membership/#names-twitch-membership">https://dev.twitch.tv/docs/irc/membership/#names-twitch-membership</a></p>
+<hr>
+<p><a name="Chat+event_GLOBALUSERSTATE"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="globaluserstate"></a><a href="#globaluserstate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;GLOBALUSERSTATE&quot;</h3>
+<p>On successful login.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>GlobalUserStateMessage</code></p>
+<hr>
+<p><a name="Chat+event_CLEARCHAT/USER_BANNED"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="clearchat-user-banned"></a><a href="#clearchat-user-banned" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;CLEARCHAT/USER_BANNED&quot;</h3>
+<p>Temporary or permanent ban on a channel.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>BaseMessage</code>  <br>
+<strong>See</strong></p>
+<ul>
+<li><a href="https://dev.twitch.tv/docs/irc/commands/#clearchat-twitch-commands">https://dev.twitch.tv/docs/irc/commands/#clearchat-twitch-commands</a></li>
+<li><a href="https://dev.twitch.tv/docs/irc/tags/#clearchat-twitch-tags">https://dev.twitch.tv/docs/irc/tags/#clearchat-twitch-tags</a></li>
+</ul>
+<p><strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>tags</td><td><code>ClearChatTags</code></td>
+    </tr><tr>
+    <td>username</td><td><code>string</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_CLEARCHAT"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="clearchat"></a><a href="#clearchat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;CLEARCHAT&quot;</h3>
+<p>All chat is cleared (deleted).</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>BaseMessage</code>  <br>
+<strong>See</strong></p>
+<ul>
+<li><a href="https://dev.twitch.tv/docs/irc/commands/#clearchat-twitch-commands">https://dev.twitch.tv/docs/irc/commands/#clearchat-twitch-commands</a></li>
+<li><a href="https://dev.twitch.tv/docs/irc/tags/#clearchat-twitch-tags">https://dev.twitch.tv/docs/irc/tags/#clearchat-twitch-tags</a></li>
+</ul>
+<hr>
+<p><a name="Chat+event_HOSTTARGET"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="hosttarget"></a><a href="#hosttarget" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;HOSTTARGET&quot;</h3>
+<p>Host starts or stops a message.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>BaseMessage</code>  <br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/commands/#hosttarget-twitch-commands">https://dev.twitch.tv/docs/irc/commands/#hosttarget-twitch-commands</a><br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>[numberOfViewers]</td><td><code>number</code></td><td><p>Number of viewers</p>
+</td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_ROOMSTATE"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="roomstate"></a><a href="#roomstate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;ROOMSTATE&quot;</h3>
+<p>When a user joins a channel or a room setting is changed.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>BaseMessage</code>  <br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>tags</td><td><code>RoomStateTags</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_NOTICE/ROOM_MODS"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="notice-room-mods"></a><a href="#notice-room-mods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;NOTICE/ROOM_MODS&quot;</h3>
+<p>NOTICE/ROOM_MODS message</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>NoticeMessage</code>  <br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>event</td><td><code>&#x27;ROOM_MODS&#x27;</code></td>
+    </tr><tr>
+    <td>mods</td><td><code>Array.&lt;string&gt;</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_NOTICE"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="notice"></a><a href="#notice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;NOTICE&quot;</h3>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>NoticeMessage</code>  <br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/commands/#msg-id-tags-for-the-notice-commands-capability">https://dev.twitch.tv/docs/irc/commands/#msg-id-tags-for-the-notice-commands-capability</a><br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>event</td><td><code>string</code></td><td><p><code>msg-id</code> tag (snake uppercase)</p>
+</td>
+    </tr><tr>
+    <td>tags</td><td><code>Object</code></td><td></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_USERSTATE"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="userstate"></a><a href="#userstate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;USERSTATE&quot;</h3>
+<p>When a user joins a channel or sends a PRIVMSG to a channel.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>UserStateMessage</code></p>
+<hr>
+<p><a name="Chat+event_PRIVMSG"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="privmsg"></a><a href="#privmsg" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;PRIVMSG&quot;</h3>
+<p>When a user joins a channel or sends a PRIVMSG to a channel.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>UserStateMessage</code>  <br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>[event]</td><td><code>&#x27;CHEER&#x27;</code></td>
+    </tr><tr>
+    <td>[event]</td><td><code>string</code></td>
+    </tr><tr>
+    <td>[bits]</td><td><code>number</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_USERNOTICE/SUBSCRIPTION"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="usernotice-subscription"></a><a href="#usernotice-subscription" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;USERNOTICE/SUBSCRIPTION&quot;</h3>
+<p>On subscription (first month) to a channel.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>UserStateMessage</code>  <br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>event</td><td><code>&#x27;SUBSCRIPTION&#x27;</code></td>
+    </tr><tr>
+    <td>systemMessage</td><td><code>string</code></td>
+    </tr><tr>
+    <td>months</td><td><code>string</code></td>
+    </tr><tr>
+    <td>subPlan</td><td><code>string</code></td>
+    </tr><tr>
+    <td>subPlanName</td><td><code>string</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_USERNOTICE/RESUBSCRIPTION"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="usernotice-resubscription"></a><a href="#usernotice-resubscription" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;USERNOTICE/RESUBSCRIPTION&quot;</h3>
+<p>On resubscription (subsequent months) to a channel.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>UserNoticeSubscriptionMessage</code>  <br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>event</td><td><code>&#x27;RESUBSCRIPTION&#x27;</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_USERNOTICE/SUBSCRIPTION_GIFT"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="usernotice-subscription-gift"></a><a href="#usernotice-subscription-gift" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;USERNOTICE/SUBSCRIPTION_GIFT&quot;</h3>
+<p>On subscription gift to a channel.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>UserStateMessage</code>  <br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>event</td><td><code>&#x27;SUBSCRIPTION_GIFT&#x27;</code></td>
+    </tr><tr>
+    <td>systemMessage</td><td><code>string</code></td>
+    </tr><tr>
+    <td>recipientDisplayName</td><td><code>string</code></td>
+    </tr><tr>
+    <td>recipientId</td><td><code>string</code></td>
+    </tr><tr>
+    <td>recipientUserName</td><td><code>string</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_USERNOTICE/RAID"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="usernotice-raid"></a><a href="#usernotice-raid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;USERNOTICE/RAID&quot;</h3>
+<p>On channel raid.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>UserStateMessage</code>  <br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>event</td><td><code>&#x27;RAID&#x27;</code></td>
+    </tr><tr>
+    <td>systemMessage</td><td><code>string</code></td>
+    </tr><tr>
+    <td>raiderDisplayName</td><td><code>string</code></td>
+    </tr><tr>
+    <td>raiderUserName</td><td><code>string</code></td>
+    </tr><tr>
+    <td>raiderViewerCount</td><td><code>string</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="Chat+event_USERNOTICE/RITUAL"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="usernotice-ritual"></a><a href="#usernotice-ritual" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;USERNOTICE/RITUAL&quot;</h3>
+<p>On channel ritual.</p>
+<p><strong>Kind</strong>: event emitted by <a href="#Chat"><code>Chat</code></a>  <br>
+<strong>Mixes</strong>: <code>UserStateMessage</code>  <br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>event</td><td><code>&#x27;RITUAL&#x27;</code></td>
+    </tr><tr>
+    <td>systemMessage</td><td><code>string</code></td>
+    </tr><tr>
+    <td>ritualName</td><td><code>string</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="TwitchJs"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="twitchjs"></a><a href="#twitchjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TwitchJs</h2>
+<p>TwitchJs client</p>
+<p><strong>Kind</strong>: global class</p>
+<ul>
+<li><a href="#TwitchJs">TwitchJs</a>
+<ul>
+<li><a href="#new_TwitchJs_new">new TwitchJs(options)</a></li>
+<li><a href="#TwitchJs+chat">.chat</a> : <a href="#Chat"><code>Chat</code></a></li>
+<li><a href="#TwitchJs+chatConstants">.chatConstants</a> : <code>Object</code></li>
+<li><a href="#TwitchJs+api">.api</a> : <a href="#Api"><code>Api</code></a></li>
+</ul></li>
+</ul>
+<hr>
+<p><a name="new_TwitchJs_new"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="new-twitchjsoptions"></a><a href="#new-twitchjsoptions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>new TwitchJs(options)</h3>
+<p>TwitchJs constructor</p>
+<table>
+  <thead>
+    <tr>
+      <th>Param</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>options</td><td><code>Object</code></td>
+    </tr><tr>
+    <td>options.token</td><td><code>string</code></td>
+    </tr><tr>
+    <td>options.username</td><td><code>string</code></td>
+    </tr><tr>
+    <td>[options.chat]</td><td><code>ChatOptions</code></td>
+    </tr><tr>
+    <td>[options.api]</td><td><code>ApiOptions</code></td>
+    </tr>  </tbody>
+</table>
+<p><strong>Example</strong> <em>(Instantiating TwitchJS)</em></p>
+<pre><code class="hljs css languages- js"><span class="token keyword">const</span> token <span class="token operator">=</span> <span class="token string">'cfabdegwdoklmawdzdo98xt2fo512y'</span>
+<span class="token keyword">const</span> username <span class="token operator">=</span> <span class="token string">'ronni'</span>
+<span class="token keyword">const</span> twitchJs <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TwitchJs</span><span class="token punctuation">(</span><span class="token punctuation">{</span> token<span class="token punctuation">,</span> username <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+twitchJs<span class="token punctuation">.</span>chat<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>globalUserState <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// Do stuff ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+twitchJs<span class="token punctuation">.</span>api<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'channel'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// Do stuff ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<p><a name="TwitchJs+chat"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="twitchjschat-code-chat-code-chat"></a><a href="#twitchjschat-code-chat-code-chat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>twitchJs.chat : <a href="#Chat"><code>Chat</code></a></h3>
+<p><strong>Kind</strong>: instance property of <a href="#TwitchJs"><code>TwitchJs</code></a></p>
+<hr>
+<p><a name="TwitchJs+chatConstants"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="twitchjschatconstants-code-object-code"></a><a href="#twitchjschatconstants-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>twitchJs.chatConstants : <code>Object</code></h3>
+<p><strong>Kind</strong>: instance property of <a href="#TwitchJs"><code>TwitchJs</code></a></p>
+<hr>
+<p><a name="TwitchJs+api"></a></p>
+<h3><a class="anchor" aria-hidden="true" id="twitchjsapi-code-api-code-api"></a><a href="#twitchjsapi-code-api-code-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>twitchJs.api : <a href="#Api"><code>Api</code></a></h3>
+<p><strong>Kind</strong>: instance property of <a href="#TwitchJs"><code>TwitchJs</code></a></p>
+<hr>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/twitch-js/docs/examples-browser">← Browser Example</a><a class="docs-next button" href="/twitch-js/docs/reference/function">Functions →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a></li><li><a href="#api">Api</a><ul class="toc-headings"><li><a href="#new-apioptions">new Api(options)</a></li><li><a href="#apireadystate-code-number-code">api.readyState : number</a></li><li><a href="#apistatus-code-apistatusstate-code">api.status : ApiStatusState</a></li><li><a href="#apiinitialize-code-promise-lt-apistatusstate-object-gt-code">api.initialize() ⇒ Promise.&lt;ApiStatusState, Object&gt;</a></li><li><a href="#apihasscopescope-code-promise-lt-boolean-boolean-gt-code">api.hasScope(scope) ⇒ Promise.&lt;boolean, boolean&gt;</a></li><li><a href="#apigetendpoint-options">api.get(endpoint, [options])</a></li><li><a href="#apipostendpoint-options">api.post(endpoint, [options])</a></li><li><a href="#apiputendpoint-options">api.put(endpoint, [options])</a></li></ul></li><li><a href="#chat-code-external-eventemitter3-code">Chat ⇐ external:EventEmitter3</a><ul class="toc-headings"><li><a href="#new-chatoptions">new Chat(options)</a></li><li><a href="#chatuserstate-code-globaluserstatetags-code">chat.userState : GlobalUserStateTags</a></li><li><a href="#chatchannels-code-object-lt-string-channelstate-gt-code">chat.channels : Object.&lt;string, ChannelState&gt;</a></li><li><a href="#chatoptions-code-chatoptions-code">chat.options : ChatOptions</a></li><li><a href="#chatreadystate-code-enum-code">chat.readyState : enum</a></li><li><a href="#chatconnect-code-promise-lt-globaluserstatemessage-string-gt-code">chat.connect() ⇒ Promise.&lt;GlobalUserStateMessage, string&gt;</a></li><li><a href="#chatsendmessage">chat.send(message)</a></li><li><a href="#chatdisconnect">chat.disconnect()</a></li><li><a href="#chatjoinchannel-code-promise-lt-channelstate-string-gt-code">chat.join(channel) ⇒ Promise.&lt;ChannelState, string&gt;</a></li><li><a href="#chatpartchannel">chat.part(channel)</a></li><li><a href="#chatsaychannel-message-code-promise-lt-userstatemessage-string-gt-code">chat.say(channel, message) ⇒ Promise.&lt;UserStateMessage, string&gt;</a></li><li><a href="#chatbroadcastmessage-code-promise-lt-array-lt-userstatemessage-gt-gt-code">chat.broadcast(message) ⇒ Promise.&lt;Array.&lt;UserStateMessage&gt;&gt;</a></li><li><a href="#">&quot;*&quot;</a></li><li><a href="#join">&quot;JOIN&quot;</a></li><li><a href="#part">&quot;PART&quot;</a></li><li><a href="#mode">&quot;MODE&quot;</a></li><li><a href="#names">&quot;NAMES&quot;</a></li><li><a href="#names-end">&quot;NAMES_END&quot;</a></li><li><a href="#globaluserstate">&quot;GLOBALUSERSTATE&quot;</a></li><li><a href="#clearchat-user-banned">&quot;CLEARCHAT/USER_BANNED&quot;</a></li><li><a href="#clearchat">&quot;CLEARCHAT&quot;</a></li><li><a href="#hosttarget">&quot;HOSTTARGET&quot;</a></li><li><a href="#roomstate">&quot;ROOMSTATE&quot;</a></li><li><a href="#notice-room-mods">&quot;NOTICE/ROOM_MODS&quot;</a></li><li><a href="#notice">&quot;NOTICE&quot;</a></li><li><a href="#userstate">&quot;USERSTATE&quot;</a></li><li><a href="#privmsg">&quot;PRIVMSG&quot;</a></li><li><a href="#usernotice-subscription">&quot;USERNOTICE/SUBSCRIPTION&quot;</a></li><li><a href="#usernotice-resubscription">&quot;USERNOTICE/RESUBSCRIPTION&quot;</a></li><li><a href="#usernotice-subscription-gift">&quot;USERNOTICE/SUBSCRIPTION_GIFT&quot;</a></li><li><a href="#usernotice-raid">&quot;USERNOTICE/RAID&quot;</a></li><li><a href="#usernotice-ritual">&quot;USERNOTICE/RITUAL&quot;</a></li></ul></li><li><a href="#twitchjs">TwitchJs</a><ul class="toc-headings"><li><a href="#new-twitchjsoptions">new TwitchJs(options)</a></li><li><a href="#twitchjschat-code-chat-code-chat">twitchJs.chat : <a href="#Chat">Chat</a></a></li><li><a href="#twitchjschatconstants-code-object-code">twitchJs.chatConstants : Object</a></li><li><a href="#twitchjsapi-code-api-code-api">twitchJs.api : <a href="#Api">Api</a></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/twitch-js/" class="nav-home"><img src="/twitch-js/img/glitch-purple.svg" alt="TwitchJS" width="66" height="58"/></a><div><h5>Docs</h5><a href="/twitch-js/docs/getting-started.html">Getting Started</a><a href="/twitch-js/docs/examples-node.html">Examples</a><a href="/twitch-js/docs/en/classes.html">API</a></div><div><h5>Community</h5><a href="https://github.com/twitch-apis/twitch-js/issues" target="_blank" rel="noreferrer noopener">Issues</a><a href="https://github.com/twitch-apis/twitch-js/pulls" target="_blank" rel="noreferrer noopener">Pull Requests</a><a href="https://gitter.im/twitch-apis/twitch-js" target="_blank" rel="noreferrer noopener">Gitter Chat</a></div><div><h5>More</h5><a href="https://github.com/twitch-apis/twitch-js">GitHub</a><a href="https://www.npmjs.com/package/twitch-js">NPM</a><a href="https://codecov.io/gh/twitch-apis/twitch-js/branch/next">Codecov</a><a class="github-button" data-icon="octicon-star" data-count-href="/twitch-apis/twitch-js/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><div class="wrapper"><section class="copyright">Copyright © 2018 Marc Andrews</section><section class="copyright no-affiliation">TwitchJS is not affiliated, associated, authorized, endorsed by, or in any way officially connected with <a href="https://www.twitch.tv/">Twitch</a>, or any of its subsidiaries or its affiliates. The name &quot;Twitch&quot; as well as related names, marks, emblems and images are registered trademarks of <a href="https://www.twitch.tv/">Twitch</a>.</section></div></footer></div></body></html>

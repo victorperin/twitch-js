@@ -1,0 +1,362 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Type Definitions · TwitchJS</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Overview"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Type Definitions · TwitchJS"/><meta property="og:type" content="website"/><meta property="og:url" content="https://twitch-apis.github.io/twitch-js/index.html"/><meta property="og:description" content="## Overview"/><meta property="og:image" content="https://twitch-apis.github.io/twitch-js/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://twitch-apis.github.io/twitch-js/img/docusaurus.png"/><link rel="shortcut icon" href="/twitch-js/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://embed.runkit.com"></script><script type="text/javascript" src="js/runkit.js"></script><link rel="stylesheet" href="/twitch-js/css/prism.css"/><link rel="stylesheet" href="/twitch-js/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/twitch-js/"><img class="logo" src="/twitch-js/img/glitch-white.svg" alt="TwitchJS"/><h2 class="headerTitleWithLogo">TwitchJS</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/twitch-js/docs/getting-started" target="_self">Docs</a></li><li class=""><a target="_self"></a></li><li class=""><a href="https://github.com/twitch-apis/twitch-js/tree/next" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Reference</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul><li class="navListItem"><a class="navItem" href="/twitch-js/docs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/authentication">Authentication</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/messaging">Messaging</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/api">API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Examples</h3><ul><li class="navListItem"><a class="navItem" href="/twitch-js/docs/examples-node">Node</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/examples-browser">Browser</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Reference</h3><ul><li class="navListItem"><a class="navItem" href="/twitch-js/docs/reference/class">Classes</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/reference/function">Functions</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/reference/constant">Constants</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/reference/enum">Enums</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/reference/mixin">Mixins</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/twitch-js/docs/reference/typedef">Type Definitions</a></li><li class="navListItem"><a class="navItem" href="/twitch-js/docs/reference/external">External</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Type Definitions</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
+<dl>
+<dt><a href="#ApiStatusState">ApiStatusState</a> : <code>Object</code></dt>
+  <dd><p>API status state.</p>
+</dd>
+  <dt><a href="#ApiOptions">ApiOptions</a> : <code>Object</code></dt>
+  <dd><p>API options</p>
+</dd>
+  <dt><a href="#ChannelState">ChannelState</a> : <code>Object</code></dt>
+  <dd><p>Channel state information</p>
+</dd>
+  <dt><a href="#ClearChatTags">ClearChatTags</a> : <code>Object</code></dt>
+  <dd><p>CLEARCHAT tags</p>
+</dd>
+  <dt><a href="#GlobalUserStateTags">GlobalUserStateTags</a> : <code>Object</code></dt>
+  <dd><p>GLOBALUSERSTATE tags</p>
+</dd>
+  <dt><a href="#PrivateMessageTags">PrivateMessageTags</a> : <code><a href="#UserStateTags">UserStateTags</a></code></dt>
+  <dd><p>PRIVMSG tags</p>
+</dd>
+  <dt><a href="#RoomStateTags">RoomStateTags</a> : <code>Object</code></dt>
+  <dd><p>ROOMSTATE Tag</p>
+</dd>
+  <dt><a href="#UserNoticeTags">UserNoticeTags</a> : <code><a href="#UserStateTags">UserStateTags</a></code></dt>
+  <dd><p>USERNOTICE tags</p>
+</dd>
+  <dt><a href="#UserStateTags">UserStateTags</a> : <code>Object</code></dt>
+  <dd><p>USERSTATE tags</p>
+</dd>
+  <dt><a href="#BadgesTag">BadgesTag</a> : <code>Object</code></dt>
+  <dd><p>Badges tag</p>
+</dd>
+  <dt><a href="#EmoteTag">EmoteTag</a> : <code>Object</code></dt>
+  <dd><p>Emote tag</p>
+</dd>
+  <dt><a href="#ChatOptions">ChatOptions</a> : <code>Object</code></dt>
+  <dd><p>Chat options</p>
+</dd>
+  <dt><a href="#FetchOptions">FetchOptions</a> : <code>Object</code></dt>
+  <dd><p>Fetch options</p>
+</dd>
+  </dl>
+<p><a name="ApiStatusState"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="apistatusstate-code-object-code"></a><a href="#apistatusstate-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ApiStatusState : <code>Object</code></h2>
+<p>API status state.</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>token</td><td><code>Object</code></td>
+    </tr><tr>
+    <td>token.authorization</td><td><code>Object</code></td>
+    </tr><tr>
+    <td>token.authorization.scopes</td><td><code>Array.&lt;string&gt;</code></td>
+    </tr><tr>
+    <td>token.authorization.createdAt</td><td><code>string</code></td>
+    </tr><tr>
+    <td>token.authorization.updatedAt</td><td><code>string</code></td>
+    </tr><tr>
+    <td>token.clientId</td><td><code>string</code></td>
+    </tr><tr>
+    <td>token.userId</td><td><code>string</code></td>
+    </tr><tr>
+    <td>token.userName</td><td><code>string</code></td>
+    </tr><tr>
+    <td>token.valid</td><td><code>boolean</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="ApiOptions"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="apioptions-code-object-code"></a><a href="#apioptions-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ApiOptions : <code>Object</code></h2>
+<p>API options</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Default</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>[clientId]</td><td><code>string</code></td><td></td><td><p>Optional if token is defined.</p>
+</td>
+    </tr><tr>
+    <td>[token]</td><td><code>string</code></td><td></td><td><p>Optional if clientId is defined.</p>
+</td>
+    </tr><tr>
+    <td>[urlRoot]</td><td><code>string</code></td><td></td><td></td>
+    </tr><tr>
+    <td>[debug]</td><td><code>boolean</code></td><td><code>false</code></td><td></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="ChannelState"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="channelstate-code-object-code"></a><a href="#channelstate-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ChannelState : <code>Object</code></h2>
+<p>Channel state information</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>roomState</td><td><code><a href="#RoomStateTags">RoomStateTags</a></code></td>
+    </tr><tr>
+    <td>userState</td><td><code><a href="#UserStateTags">UserStateTags</a></code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="ClearChatTags"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="clearchattags-code-object-code"></a><a href="#clearchattags-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ClearChatTags : <code>Object</code></h2>
+<p>CLEARCHAT tags</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/tags#clearchat-twitch-tags">https://dev.twitch.tv/docs/irc/tags#clearchat-twitch-tags</a><br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>[banReason]</td><td><code>string</code></td>
+    </tr><tr>
+    <td>[banDuration]</td><td><code>number</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="GlobalUserStateTags"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="globaluserstatetags-code-object-code"></a><a href="#globaluserstatetags-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GlobalUserStateTags : <code>Object</code></h2>
+<p>GLOBALUSERSTATE tags</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/tags#globaluserstate-twitch-tags">https://dev.twitch.tv/docs/irc/tags#globaluserstate-twitch-tags</a><br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>emoteSets</td><td><code>Array.&lt;string&gt;</code></td>
+    </tr><tr>
+    <td>userType</td><td><code>string</code></td>
+    </tr><tr>
+    <td>username</td><td><code>string</code></td>
+    </tr><tr>
+    <td>isTurboSubscriber</td><td><code>boolean</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="PrivateMessageTags"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="privatemessagetags-code-userstatetags-code-userstatetags"></a><a href="#privatemessagetags-code-userstatetags-code-userstatetags" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PrivateMessageTags : <a href="#UserStateTags"><code>UserStateTags</code></a></h2>
+<p>PRIVMSG tags</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/tags#privmsg-twitch-tags">https://dev.twitch.tv/docs/irc/tags#privmsg-twitch-tags</a></p>
+<hr>
+<p><a name="RoomStateTags"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="roomstatetags-code-object-code"></a><a href="#roomstatetags-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RoomStateTags : <code>Object</code></h2>
+<p>ROOMSTATE Tag</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/tags#roomstate-twitch-tags">https://dev.twitch.tv/docs/irc/tags#roomstate-twitch-tags</a><br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>broadcasterLanguage</td><td><code>string</code></td>
+    </tr><tr>
+    <td>slowDelay</td><td><code>number</code></td>
+    </tr><tr>
+    <td>isFollowersOnly</td><td><code>boolean</code></td>
+    </tr><tr>
+    <td>isSubscribersOnly</td><td><code>boolean</code></td>
+    </tr><tr>
+    <td>isEmoteOnly</td><td><code>boolean</code></td>
+    </tr><tr>
+    <td>isR9kEnabled</td><td><code>boolean</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="UserNoticeTags"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="usernoticetags-code-userstatetags-code-userstatetags"></a><a href="#usernoticetags-code-userstatetags-code-userstatetags" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UserNoticeTags : <a href="#UserStateTags"><code>UserStateTags</code></a></h2>
+<p>USERNOTICE tags</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/tags#usernotice-twitch-tags">https://dev.twitch.tv/docs/irc/tags#usernotice-twitch-tags</a></p>
+<hr>
+<p><a name="UserStateTags"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="userstatetags-code-object-code"></a><a href="#userstatetags-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UserStateTags : <code>Object</code></h2>
+<p>USERSTATE tags</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/tags#userstate-twitch-tags">https://dev.twitch.tv/docs/irc/tags#userstate-twitch-tags</a><br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>badges</td><td><code><a href="#BadgesTag">BadgesTag</a></code></td>
+    </tr><tr>
+    <td>[bits]</td><td><code>number</code></td>
+    </tr><tr>
+    <td>emotes</td><td><code>Object.&lt;number, EmoteTag&gt;</code></td>
+    </tr><tr>
+    <td>emoteSets</td><td><code>Array.&lt;string&gt;</code></td>
+    </tr><tr>
+    <td>isModerator</td><td><code>boolean</code></td>
+    </tr><tr>
+    <td>isSubscriber</td><td><code>boolean</code></td>
+    </tr><tr>
+    <td>isTurboSubscriber</td><td><code>boolean</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="BadgesTag"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="badgestag-code-object-code"></a><a href="#badgestag-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BadgesTag : <code>Object</code></h2>
+<p>Badges tag</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/tags/#privmsg-twitch-tags">https://dev.twitch.tv/docs/irc/tags/#privmsg-twitch-tags</a><br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>[admin]</td><td><code>boolean</code></td>
+    </tr><tr>
+    <td>[bits]</td><td><code>number</code></td>
+    </tr><tr>
+    <td>[broadcaster]</td><td><code>boolean</code></td>
+    </tr><tr>
+    <td>[globalMod]</td><td><code>boolean</code></td>
+    </tr><tr>
+    <td>[moderator]</td><td><code>boolean</code></td>
+    </tr><tr>
+    <td>[subscriber]</td><td><code>boolean</code></td>
+    </tr><tr>
+    <td>[staff]</td><td><code>boolean</code></td>
+    </tr><tr>
+    <td>[turbo]</td><td><code>boolean</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="EmoteTag"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="emotetag-code-object-code"></a><a href="#emotetag-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EmoteTag : <code>Object</code></h2>
+<p>Emote tag</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/tags/#privmsg-twitch-tags">https://dev.twitch.tv/docs/irc/tags/#privmsg-twitch-tags</a><br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>start</td><td><code>number</code></td>
+    </tr><tr>
+    <td>end</td><td><code>number</code></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="ChatOptions"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="chatoptions-code-object-code"></a><a href="#chatoptions-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ChatOptions : <code>Object</code></h2>
+<p>Chat options</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Default</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>username</td><td><code>string</code></td><td></td><td></td>
+    </tr><tr>
+    <td>token</td><td><code>string</code></td><td></td><td><p>OAuth token (use <a href="https://twitchapps.com/tmi/">https://twitchapps.com/tmi/</a> to generate one)</p>
+</td>
+    </tr><tr>
+    <td>[connectionTimeout]</td><td><code>number</code></td><td><code>{@link CONNECTION_TIMEOUT}</code></td><td></td>
+    </tr><tr>
+    <td>[joinTimeout]</td><td><code>number</code></td><td><code>{@link JOIN_TIMEOUT}</code></td><td></td>
+    </tr><tr>
+    <td>[debug]</td><td><code>boolean</code></td><td><code>false</code></td><td></td>
+    </tr>  </tbody>
+</table>
+<hr>
+<p><a name="FetchOptions"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="fetchoptions-code-object-code"></a><a href="#fetchoptions-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FetchOptions : <code>Object</code></h2>
+<p>Fetch options</p>
+<p><strong>Kind</strong>: global typedef<br>
+<strong>Properties</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Type</th><th>Default</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td>[options.method]</td><td><code>string</code></td><td><code>&quot;get&quot;</code></td><td><p>The request method, e.g., <code>get</code>, <code>post</code>.</p>
+</td>
+    </tr><tr>
+    <td>[options.headers]</td><td><code>Object</code></td><td></td><td><p>Any headers you want to add to your request.</p>
+</td>
+    </tr><tr>
+    <td>[options.search]</td><td><code>Object</code></td><td></td><td><p>Any query parameters you want to add to your request.</p>
+</td>
+    </tr><tr>
+    <td>[options.body]</td><td><code>Object</code> | <code>FormData</code></td><td></td><td><p>Any body that you want to add to your request.</p>
+</td>
+    </tr>  </tbody>
+</table>
+<hr>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/twitch-js/docs/reference/mixin">← Mixins</a><a class="docs-next button" href="/twitch-js/docs/reference/external">External →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a></li><li><a href="#apistatusstate-code-object-code">ApiStatusState : Object</a></li><li><a href="#apioptions-code-object-code">ApiOptions : Object</a></li><li><a href="#channelstate-code-object-code">ChannelState : Object</a></li><li><a href="#clearchattags-code-object-code">ClearChatTags : Object</a></li><li><a href="#globaluserstatetags-code-object-code">GlobalUserStateTags : Object</a></li><li><a href="#privatemessagetags-code-userstatetags-code-userstatetags">PrivateMessageTags : <a href="#UserStateTags">UserStateTags</a></a></li><li><a href="#roomstatetags-code-object-code">RoomStateTags : Object</a></li><li><a href="#usernoticetags-code-userstatetags-code-userstatetags">UserNoticeTags : <a href="#UserStateTags">UserStateTags</a></a></li><li><a href="#userstatetags-code-object-code">UserStateTags : Object</a></li><li><a href="#badgestag-code-object-code">BadgesTag : Object</a></li><li><a href="#emotetag-code-object-code">EmoteTag : Object</a></li><li><a href="#chatoptions-code-object-code">ChatOptions : Object</a></li><li><a href="#fetchoptions-code-object-code">FetchOptions : Object</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/twitch-js/" class="nav-home"><img src="/twitch-js/img/glitch-purple.svg" alt="TwitchJS" width="66" height="58"/></a><div><h5>Docs</h5><a href="/twitch-js/docs/getting-started.html">Getting Started</a><a href="/twitch-js/docs/examples-node.html">Examples</a><a href="/twitch-js/docs/en/classes.html">API</a></div><div><h5>Community</h5><a href="https://github.com/twitch-apis/twitch-js/issues" target="_blank" rel="noreferrer noopener">Issues</a><a href="https://github.com/twitch-apis/twitch-js/pulls" target="_blank" rel="noreferrer noopener">Pull Requests</a><a href="https://gitter.im/twitch-apis/twitch-js" target="_blank" rel="noreferrer noopener">Gitter Chat</a></div><div><h5>More</h5><a href="https://github.com/twitch-apis/twitch-js">GitHub</a><a href="https://www.npmjs.com/package/twitch-js">NPM</a><a href="https://codecov.io/gh/twitch-apis/twitch-js/branch/next">Codecov</a><a class="github-button" data-icon="octicon-star" data-count-href="/twitch-apis/twitch-js/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><div class="wrapper"><section class="copyright">Copyright © 2018 Marc Andrews</section><section class="copyright no-affiliation">TwitchJS is not affiliated, associated, authorized, endorsed by, or in any way officially connected with <a href="https://www.twitch.tv/">Twitch</a>, or any of its subsidiaries or its affiliates. The name &quot;Twitch&quot; as well as related names, marks, emblems and images are registered trademarks of <a href="https://www.twitch.tv/">Twitch</a>.</section></div></footer></div></body></html>
