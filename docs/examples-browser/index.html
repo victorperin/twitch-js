@@ -27,51 +27,51 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Browser Example</h1></header><article><div><span><pre><code class="hljs css language-html"><span class="hljs-meta">&lt;!doctype html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Browser Example</h1></header><article><div><span><pre><code class="hljs css language-html"><span class="token doctype">&lt;!doctype html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>TwitchJS Example<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"TwitchJS Example"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>TwitchJS Example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>TwitchJS Example<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>TwitchJS Example<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Please see console<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>TwitchJS Example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Please see console<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/twitch-js@&gt;2.0.0-beta/dist/twitch-js.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-    (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-      <span class="hljs-comment">// Provide your token, username and channel. You can generate a token</span>
-      <span class="hljs-comment">// here: https://twitchapps.com/tmi/</span>
-      <span class="hljs-keyword">const</span> token = TWITCH_TOKEN;
-      <span class="hljs-keyword">const</span> username = TWITCH_USERNAME;
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://unpkg.com/twitch-js@>2.0.0-beta/dist/twitch-js.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>
+    (function() {
+      // Provide your token, username and channel. You can generate a token
+      // here: https://twitchapps.com/tmi/
+      const token = TWITCH_TOKEN;
+      const username = TWITCH_USERNAME;
 
-      <span class="hljs-keyword">const</span> channel = <span class="hljs-string">'twitchapis'</span>;
+      const channel = 'twitchapis';
 
-      <span class="hljs-comment">// Instantiate clients.</span>
-      <span class="hljs-keyword">const</span> { api, chat, chatConstants } = <span class="hljs-keyword">new</span> TwitchJs({ token, username });
+      // Instantiate clients.
+      const { api, chat, chatConstants } = new TwitchJs({ token, username });
 
-      <span class="hljs-comment">// Get featured streams.</span>
-      api.get(<span class="hljs-string">'streams/featured'</span>).then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
-        <span class="hljs-built_in">console</span>.log(response);
-        <span class="hljs-comment">// Do stuff ...</span>
+      // Get featured streams.
+      api.get('streams/featured').then(response => {
+        console.log(response);
+        // Do stuff ...
       });
 
-      <span class="hljs-comment">// Listen to all events.</span>
-      <span class="hljs-keyword">const</span> log = <span class="hljs-function"><span class="hljs-params">msg</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(msg);
+      // Listen to all events.
+      const log = msg => console.log(msg);
       chat.on(chatConstants.EVENTS.ALL, log);
 
-      <span class="hljs-comment">// Connect ...</span>
-      chat.connect().then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-        <span class="hljs-comment">// ... and then join the channel.</span>
+      // Connect ...
+      chat.connect().then(() => {
+        // ... and then join the channel.
         chat.join(channel);
       });
     })();
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/twitch-js/docs/examples-node"><span class="arrow-prev">← </span><span>Node Example</span></a><a class="docs-next button" href="/twitch-js/docs/reference/class"><span>Classes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/twitch-js/" class="nav-home"><img src="/twitch-js/img/glitch-js-purple.svg" alt="TwitchJS" width="66" height="58"/></a><div><h5>Docs</h5><a href="/twitch-js/docs/getting-started.html">Getting Started</a><a href="/twitch-js/docs/examples-node.html">Examples</a><a href="/twitch-js/docs/en/classes.html">API</a></div><div><h5>Community</h5><a href="https://github.com/twitch-devs/twitch-js/milestones">Milestones</a><a href="https://github.com/twitch-devs/twitch-js/issues">Issues</a><a href="https://github.com/twitch-devs/twitch-js/pulls">Pull Requests</a></div><div><h5>More</h5><a href="https://github.com/twitch-devs/twitch-js">GitHub</a><a href="https://www.npmjs.com/package/twitch-js">NPM</a><a href="https://codecov.io/gh/twitch-devs/twitch-js/branch/next">Codecov</a><a href="https://dev.twitch.tv/docs/">Twitch Developer Docs</a></div></section><div class="wrapper"><section class="copyright">Copyright © 2018 Marc Andrews</section><section class="copyright no-affiliation">TwitchJS is not affiliated, associated, authorized, endorsed by, or in any way officially connected with <a href="https://www.twitch.tv/">Twitch</a>, or any of its subsidiaries or its affiliates. The name &quot;Twitch&quot; as well as related names, marks, emblems and images are registered trademarks of <a href="https://www.twitch.tv/">Twitch</a>.</section></div></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/twitch-js/docs/examples-node"><span class="arrow-prev">← </span><span>Node</span></a><a class="docs-next button" href="/twitch-js/docs/reference/class"><span>Classes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/twitch-js/" class="nav-home"><img src="/twitch-js/img/glitch-js-purple.svg" alt="TwitchJS" width="66" height="58"/></a><div><h5>Docs</h5><a href="/twitch-js/docs/getting-started.html">Getting Started</a><a href="/twitch-js/docs/examples-node.html">Examples</a><a href="/twitch-js/docs/en/classes.html">API</a></div><div><h5>Community</h5><a href="https://github.com/twitch-devs/twitch-js/milestones">Milestones</a><a href="https://github.com/twitch-devs/twitch-js/issues">Issues</a><a href="https://github.com/twitch-devs/twitch-js/pulls">Pull Requests</a></div><div><h5>More</h5><a href="https://github.com/twitch-devs/twitch-js">GitHub</a><a href="https://www.npmjs.com/package/twitch-js">NPM</a><a href="https://codecov.io/gh/twitch-devs/twitch-js/branch/next">Codecov</a><a href="https://dev.twitch.tv/docs/">Twitch Developer Docs</a></div></section><div class="wrapper"><section class="copyright">Copyright © 2018 Marc Andrews</section><section class="copyright no-affiliation">TwitchJS is not affiliated, associated, authorized, endorsed by, or in any way officially connected with <a href="https://www.twitch.tv/">Twitch</a>, or any of its subsidiaries or its affiliates. The name &quot;Twitch&quot; as well as related names, marks, emblems and images are registered trademarks of <a href="https://www.twitch.tv/">Twitch</a>.</section></div></footer></div></body></html>

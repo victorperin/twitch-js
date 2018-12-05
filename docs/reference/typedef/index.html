@@ -198,8 +198,6 @@
     <td>userType</td><td><code>string</code></td>
     </tr><tr>
     <td>username</td><td><code>string</code></td>
-    </tr><tr>
-    <td>isTurboSubscriber</td><td><code>boolean</code></td>
     </tr>  </tbody>
 </table>
 <hr>
@@ -213,29 +211,7 @@
 <h2><a class="anchor" aria-hidden="true" id="roomstatetags-code-object-code"></a><a href="#roomstatetags-code-object-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RoomStateTags : <code>Object</code></h2>
 <p>ROOMSTATE Tag</p>
 <p><strong>Kind</strong>: global typedef<br>
-<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/tags#roomstate-twitch-tags">https://dev.twitch.tv/docs/irc/tags#roomstate-twitch-tags</a><br>
-<strong>Properties</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th><th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>broadcasterLanguage</td><td><code>string</code></td>
-    </tr><tr>
-    <td>slowDelay</td><td><code>number</code></td>
-    </tr><tr>
-    <td>isFollowersOnly</td><td><code>boolean</code></td>
-    </tr><tr>
-    <td>isSubscribersOnly</td><td><code>boolean</code></td>
-    </tr><tr>
-    <td>isEmoteOnly</td><td><code>boolean</code></td>
-    </tr><tr>
-    <td>isR9kEnabled</td><td><code>boolean</code></td>
-    </tr>  </tbody>
-</table>
+<strong>See</strong>: <a href="https://dev.twitch.tv/docs/irc/tags#roomstate-twitch-tags">https://dev.twitch.tv/docs/irc/tags#roomstate-twitch-tags</a></p>
 <hr>
 <p><a name="UserNoticeTags"></a></p>
 <h2><a class="anchor" aria-hidden="true" id="usernoticetags-code-userstatetags-code-typedef-userstatetags"></a><a href="#usernoticetags-code-userstatetags-code-typedef-userstatetags" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UserNoticeTags : <a href="typedef#UserStateTags"><code>UserStateTags</code></a></h2>
@@ -262,14 +238,6 @@
     <td>emotes</td><td><code><a href="typedef#EmoteTag">Array.&lt;EmoteTag&gt;</a></code></td>
     </tr><tr>
     <td>emoteSets</td><td><code>Array.&lt;string&gt;</code></td>
-    </tr><tr>
-    <td>isModerator</td><td><code>boolean</code></td>
-    </tr><tr>
-    <td>isSubscriber</td><td><code>boolean</code></td>
-    </tr><tr>
-    <td>isSubGifter</td><td><code>boolean</code></td>
-    </tr><tr>
-    <td>isTurboSubscriber</td><td><code>boolean</code></td>
     </tr><tr>
     <td>[bits]</td><td><code>number</code></td>
     </tr>  </tbody>
@@ -350,11 +318,17 @@
     <td>[token]</td><td><code>string</code></td><td></td><td><p>OAuth token (use <a href="https://twitchtokengenerator.com/">https://twitchtokengenerator.com/</a> to generate one)</p>
 </td>
     </tr><tr>
+    <td>[isKnown]</td><td><code>boolean</code></td><td></td><td><p>bot is known (see <a href="https://dev.twitch.tv/docs/irc/guide/#known-and-verified-bots">https://dev.twitch.tv/docs/irc/guide/#known-and-verified-bots</a> for more information)</p>
+</td>
+    </tr><tr>
+    <td>[isVerified]</td><td><code>boolean</code></td><td></td><td><p>bot is verified (see <a href="https://dev.twitch.tv/docs/irc/guide/#known-and-verified-bots">https://dev.twitch.tv/docs/irc/guide/#known-and-verified-bots</a> for more information)</p>
+</td>
+    </tr><tr>
     <td>[connectionTimeout]</td><td><code>number</code></td><td><code>CONNECTION_TIMEOUT</code></td><td></td>
     </tr><tr>
     <td>[joinTimeout]</td><td><code>number</code></td><td><code>JOIN_TIMEOUT</code></td><td></td>
     </tr><tr>
-    <td>log</td><td><code>Object</code></td><td></td><td></td>
+    <td>[log]</td><td><code>Object</code></td><td></td><td></td>
     </tr><tr>
     <td>[onAuthenticationFailure]</td><td><code>function</code></td><td></td><td></td>
     </tr>  </tbody>
